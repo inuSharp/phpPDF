@@ -1,0 +1,104 @@
+<style>
+table {
+  border-collapse:collapse;
+}
+.border td {
+  border: 1px solid #f00;
+}
+.table2 td{
+  border: 1px solid #00;
+}
+.table-border {
+  border:1px solid #000;
+}
+td{height: 13px;line-height:13px;vertical-align:middle}
+.col2 {font-size:9px;width:12%;text-align:center;}
+.col3 {font-size:9px;width:12%;text-align:right;}
+.col4 {font-size:9px;width:12%;text-align:right;}
+.col5 {font-size:9px;width:12%;text-align:right;}
+.col6 {font-size:9px;width:16%;text-align:right;}
+.td-common{height: 40px;line-height:40px;vertical-align:middle}
+</style>
+
+<label>tcpdfを使ってhtmlからpdfを作成する</label><br>
+<div style="height:14px;">div styleなし。上に余白が入る</div>
+<label>label + brなら上に余白が入らない</label><br>
+<label>label + brなら上に余白が入らない</label><br>
+
+<!-- maginやpaddingは効かない -->
+<div style="margin-left:20px;">margin-left:20px 効かない</div>
+<div style="padding-left:20px;">padding-left:20px 効かない</div>
+<div style="background-color:#ffff00;">background-color</div>
+<div style="font-size:20px;">font 20px;</div>
+
+<table>
+    <tr><td>aaa</td></tr>
+    <tr><td>bbb</td></tr>
+</table>
+
+<!-- 上余白 --><div style="line-height:100px;">&nbsp;</div>
+
+<table class="border">
+    <tr><td>aaa</td></tr>
+    <tr><td>bbb</td></tr>
+</table>
+
+<!-- 上余白 --><div style="line-height:50px;">&nbsp;</div>
+
+
+<label>左右に余白を作りたいならtableで無理やりやるしかない？</label><br>
+
+
+<!--
+    tableに100%指定しても中央のセルが100%-左右の幅にはならない
+    すべてのtdにwidthを指定する必要がある
+-->
+<table>
+    <tr>
+        <td style="width:20%;"></td>
+        <td style="width:60%;">ここに記述</td>
+        <td style="width:20%;"></td>
+    </tr>
+</table>
+
+
+<label>動的に出力</label><br>
+<label>@DATE</label><br>
+
+<div>がんばれば複雑なものもできる</div>
+<table cellpadding="1" style="background-color:#ede7f6;border:2px solid #000;">
+  <tr>
+    <td class="table-border" rowspan="2" style="font-size:7px;width:11%;text-align:center;">
+      <table>
+        <tr><td style="font-size:9px;text-align:center;line-height:15px;height:15px;">&nbsp;</td></tr>
+        <tr><td style="font-size:9px;text-align:center;line-height:10px;height:10px;">あ</td></tr>
+        <tr><td style="font-size:9px;text-align:center;line-height:10px;height:10px;">い</td></tr>
+        <tr><td style="font-size:9px;text-align:center;line-height:10px;height:10px;">う</td></tr>
+        <tr><td style="font-size:9px;text-align:center;line-height:10px;height:10px;">え</td></tr>
+        <tr><td style="font-size:9px;text-align:center;line-height:10px;height:10px;">お</td></tr>
+      </table>
+    </td>
+    <td class="table-border td-common col2" rowspan="2" style="line-height:80px;">中央寄せ</td>
+    <td class="table-border td-common col3" rowspan="2" style="line-height:80px;">右寄せ</td>
+    <td class="table-border td-common col4">9999</td>
+    <td class="table-border td-common col5">9999</td>
+    <td class="table-border td-common col6">9999</td>
+    <td class="table-border td-common" style="font-size:7.5px;width:25%;text-align:center;">9999</td>
+  </tr>
+  <tr>
+    <td class="table-border td-common col4"></td>
+    <td class="table-border td-common col5"></td>
+    <td class="table-border td-common col6"></td>
+    <td class="table-border td-common" style="font-size:7.5px;width:25%;text-align:center;"></td>
+  </tr>
+</table>
+
+<table cellpadding="1" style="border:2px solid #000;">
+  <tr>
+    <td class="table-border" style="font-size:9px;width:35%;text-align:center;">合&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;計</td>
+    <td class="table-border" style="font-size:9px;width:12%;text-align:center;"></td>
+    <td class="table-border" style="font-size:9px;width:12%;text-align:right;"></td>
+    <td class="table-border" style="font-size:9px;width:16%;text-align:right;"></td>
+    <td class="table-border" style="font-size:9px;width:25%;text-align:center;"></td>
+  </tr>
+</table>
